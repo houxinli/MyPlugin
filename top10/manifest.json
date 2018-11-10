@@ -1,0 +1,26 @@
+{
+  "name": "top10",
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "description": "Automatically opens the unviewed top 10 posts in CC98 for you",
+  "browser_action": {
+    "default_icon":{
+      "16": "icon/bookmark-16.png",
+      "32": "icon/bookmark-32.png",
+      "128": "icon/bookmark-128.png"
+    },
+    "default_title": "top10 by houxinli"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.cc98.org/"],
+      "js": [
+        "js/jquery.js",
+        "js/top10.js"
+      ],
+      "css": [
+        "css/top10.css"
+      ]
+    }
+  ]
+}
