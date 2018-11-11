@@ -22,5 +22,8 @@
         "css/top10.css"
       ]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
