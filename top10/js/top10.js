@@ -4,8 +4,6 @@ $(document).ready(function(){
 	setTimeout(function(){
 		$("div.mainPageListContent1:first .mainPageListTitle a")
 		.each(function(index,e){
-			// e.addClass("Top 10");
-			// localStorage.curT = Date.now();
 			var id = e.getAttribute("href").split('/')[2];
 			var title = e.innerHTML;
 			console.log("id", id)
@@ -36,5 +34,6 @@ $(document).ready(function(){
 		});
 	}, 1000);
 // TODO: account storage
+// curT = Date.now();
 // 从storage中取回帖数等指标判断是否再次打开
 });
