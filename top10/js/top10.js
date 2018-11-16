@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	// localStorage.removeItem("top10ViewHistory");
+	console.log('localStorage', localStorage);
 	setTimeout(function(){
 		$("div.mainPageListContent1:first .mainPageListTitle a")
 		.each(function(index,e){
@@ -8,34 +10,29 @@ $(document).ready(function(){
 			var title = e.innerHTML;
 			console.log("id", id)
 			console.log("title: ", title);
-			if(typeof(localStorage['top10ViewHistory']) == 'undefined'){
+			if(typeof(localStorage['top10ViewHistory']) == "undefined"){
 				var obj = new Object();
+				// console.log("branch1");
 				// obj.account TODO
 				obj.num = 1;
-				obj.posts = new Array(1);
-				var post = {'id': id, 'title': title};
-				obj.posts[0] = post;
-				console.log("obj: ", obj)
-				localStorage['top10ViewHistory'] = obj;
+				obj[id] = title;
+				// console.log("obj: ", obj);
+				var str = JSON.stringify(obj);
+				localStorage['top10ViewHistory'] = str;
+				// console.log('localStorage', localStorage);
 			}else{
-				var obj = localStorage['top10ViewHistory'];
-				console.log("obj: ", obj)
-				var posts = obj.posts;
-				var flag = 0;
-				for (var i = posts.length - 1; i >= 0; i--) {
-					if(posts[i].id == id){
-						flag = 1;
-						break;
-					}
-				}
-				if(flag == 0){
+				// console.log("branch2");
+				var str = localStorage['top10ViewHistory'];
+				obj = JSON.parse(str);
+				// console.log("obj: ", obj)
+				if(obj[id] === undefined){
+					obj[id] = title;
 					obj.num++;
-					var post = {'id': id, 'title': title};
-					obj.posts.push(post);
-					localStorage['top10ViewHistory'] = obj;
 				}
+				str = JSON.stringify(obj);
+				localStorage['top10ViewHistory'] = str;
+				e.click();
 			}
-			console.log('localStorage', localStorage);
 		});
 	}, 1000);
 // TODO: account storage
