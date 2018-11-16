@@ -28,10 +28,10 @@ $(document).ready(function(){
 				if(obj[id] === undefined){
 					obj[id] = title;
 					obj.num++;
+					e.click();
+					str = JSON.stringify(obj);
+					localStorage['top10ViewHistory'] = str;
 				}
-				str = JSON.stringify(obj);
-				localStorage['top10ViewHistory'] = str;
-				e.click();
 			}
 		});
 	}, 1000);
