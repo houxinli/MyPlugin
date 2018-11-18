@@ -11,6 +11,11 @@
     },
     "default_title": "blocker by houxinli"
   },
+  "icons":{
+    "16": "icon/circle-thin-16.png",
+    "32": "icon/circle-thin-32.png",
+    "128": "icon/circle-thin-128.png"
+  },
   "content_scripts": [
     {
       "matches": ["https://blog.csdn.net/*"],
