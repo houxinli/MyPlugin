@@ -1,12 +1,12 @@
 $(document).ready(function(){
   $(".tool-box").remove();
   $(".adblock").remove();
-  $(".pulllog-box").remove();
-  $("aside").click(function(){
-    $(this).hide();
-  });
   $('div.article_content').removeAttr('style');
+  $(".pulllog-box").remove();
   $('#btn-readmore').parent().remove();
+  // $("aside").click(function(){
+  //   $(this).hide();
+  // });
   
   // setTimeout(function(){
   //   alert("4000");

@@ -9,7 +9,7 @@
       "32": "icon/bookmark-32.png",
       "128": "icon/bookmark-128.png"
     },
-    "default_title": "top10 by houxinli"
+    "default_title": "98heat by houxinli"
   },
   "content_scripts": [
     {
